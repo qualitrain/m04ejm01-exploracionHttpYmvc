@@ -1,0 +1,603 @@
+Genera clase base para experimento Web =======================================================================================================
+
+  PROMPT
+
+Genera una clase en Java que represente los datos típicos de un perro
+
+ CODIGO GENERADO: ---------------------------------------------------------------
+
+public class Perro {
+    // Campos o atributos
+    private String nombre;
+    private String raza;
+    private int edad;
+    private String color;
+    private double peso; // en kilogramos
+    private boolean vacunado;
+    private boolean esterilizado;
+
+    // Constructor
+    public Perro(String nombre, String raza, int edad, String color, double peso, boolean vacunado, boolean esterilizado) {
+        this.nombre = nombre;
+        this.raza = raza;
+        this.edad = edad;
+        this.color = color;
+        this.peso = peso;
+        this.vacunado = vacunado;
+        this.esterilizado = esterilizado;
+    }
+
+    // Métodos getters y setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public boolean isVacunado() {
+        return vacunado;
+    }
+
+    public void setVacunado(boolean vacunado) {
+        this.vacunado = vacunado;
+    }
+
+    public boolean isEsterilizado() {
+        return esterilizado;
+    }
+
+    public void setEsterilizado(boolean esterilizado) {
+        this.esterilizado = esterilizado;
+    }
+
+    // Método para representar la acción de ladrar
+    public void ladrar() {
+        System.out.println("¡Guau! ¡Guau!");
+    }
+
+    // Método para mostrar información básica
+    public String obtenerInformacion() {
+        return "Nombre: " + nombre +
+               "\nRaza: " + raza +
+               "\nEdad: " + edad + " años" +
+               "\nColor: " + color +
+               "\nPeso: " + peso + " kg" +
+               "\nVacunado: " + (vacunado ? "Sí" : "No") +
+               "\nEsterilizado: " + (esterilizado ? "Sí" : "No");
+    }
+}
+
+
+Características de la clase:
+
+Atributos principales: Contiene los datos básicos de un perro (nombre, raza, edad, color, peso, estado de vacunación y esterilización)
+
+Encapsulamiento: Todos los campos son privados y se acceden mediante métodos getters y setters
+
+Métodos adicionales:
+
+ladrar(): Simula el ladrido del perro
+
+obtenerInformacion(): Devuelve una cadena con todos los datos del perro formateados
+
+Tipos de datos adecuados: Usa tipos específicos para cada dato (boolean para estados, double para peso, etc.)
+
+Ejemplo de uso:
+
+public class Main {
+    public static void main(String[] args) {
+        Perro miPerro = new Perro(
+            "Firulais",
+            "Golden Retriever",
+            3,
+            "Dorado",
+            25.5,
+            true,
+            false
+        );
+        
+        miPerro.ladrar();
+        System.out.println(miPerro.obtenerInformacion());
+        
+        // Modificar un atributo
+        miPerro.setEdad(4);
+        miPerro.setPeso(26.8);
+        System.out.println("\nDatos actualizados:");
+        System.out.println(miPerro.obtenerInformacion());
+    }
+}
+
+
+Generar un formulario HTML para el perro =====================================================================================================
+
+  PROMPT
+
+genera un formulario en html que permita registrar un perro. Toma la definición previa como base.
+
+ CODIGO GENERADO: ---------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Perros</title>
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .radio-group label {
+            font-weight: normal;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registro de Perro</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="raza">Raza:</label>
+                <input type="text" id="raza" name="raza" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad (años):</label>
+                <input type="number" id="edad" name="edad" min="0" max="30" required>
+            </div>
+
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required>
+            </div>
+
+            <div class="form-group">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step="0.1" min="0" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label>Estado de vacunación:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="vacunado" value="si" required> Sí
+                    </label>
+                    <label>
+                        <input type="radio" name="vacunado" value="no"> No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Esterilizado:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="esterilizado" value="si" required> Sí
+                    </label>
+                    <label>
+                        <input type="radio" name="esterilizado" value="no"> No
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit">Registrar Perro</button>
+        </form>
+    </div>
+</body>
+</html>
+
+Agregar botón y generación de Petición HTTP con JavaScript ==================================================================================
+
+ PROMPT --------------------
+
+Agrega un botón al final llamado "Sugerencias" y código en JavaScript que genere una peticion PUT
+
+ CODIGO GENERADO: ---------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Mantener mismo head y estilos anteriores -->
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registro de Perro</h2>
+        <form action="#" method="post">
+            <!-- Mantener mismos campos del formulario anterior -->
+            
+            <div class="form-group">
+                <button type="submit">Registrar Perro</button>
+                <button type="button" id="sugerenciasBtn">Sugerencias</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('sugerenciasBtn').addEventListener('click', function() {
+            // Datos de ejemplo para la sugerencia (pueden personalizarse)
+            const sugerencia = {
+                nombre: 'Ejemplo: Max',
+                raza: 'Ejemplo: Labrador',
+                edad: 2,
+                color: 'Ejemplo: Negro',
+                peso: 15.5,
+                vacunado: true,
+                esterilizado: false
+            };
+
+            // Configurar la petición PUT
+            const xhr = new XMLHttpRequest();
+            xhr.open('PUT', 'https://ejemploapi.com/perros/sugerencias', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        console.log('Sugerencia enviada con éxito:', xhr.responseText);
+                        alert('¡Gracias por tu sugerencia!');
+                    } else {
+                        console.error('Error al enviar sugerencia:', xhr.statusText);
+                        alert('Error al enviar la sugerencia. Intenta nuevamente.');
+                    }
+                }
+            };
+
+            xhr.send(JSON.stringify(sugerencia));
+        });
+    </script>
+</body>
+</html>
+
+
+----------------------------------------
+
+Cambios principales:
+
+Botón de sugerencias añadido:
+
+html
+<button type="button" id="sugerenciasBtn">Sugerencias</button>
+type="button" previene el envío del formulario
+
+ID único para selección en JavaScript
+
+Lógica JavaScript para petición PUT:
+
+javascript
+document.getElementById('sugerenciasBtn').addEventListener('click', function() {
+    // Lógica de la petición
+});
+Características de la petición:
+
+Usa XMLHttpRequest para comunicación asíncrona
+
+Envía datos en formato JSON
+
+Maneja éxito y errores
+
+Incluye ejemplo de datos estructurados
+
+Para usar con un endpoint real:
+
+Cambiar la URL en xhr.open()
+
+Añadir headers de autenticación si es necesario
+
+Modificar el objeto sugerencia según necesidades
+
+
+Versión alternativa usando Fetch API (más moderna): ---------------------------------
+
+document.getElementById('sugerenciasBtn').addEventListener('click', async () => {
+    try {
+        const response = await fetch('https://ejemploapi.com/perros/sugerencias', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                nombre: 'Ejemplo: Buddy',
+                raza: 'Ejemplo: Pastor Alemán',
+                edad: 4,
+                color: 'Ejemplo: Marrón',
+                peso: 22.0,
+                vacunado: true,
+                esterilizado: true
+            })
+        });
+
+        if (!response.ok) throw new Error('Error en la petición');
+        
+        const data = await response.json();
+        alert('Sugerencia enviada: ' + JSON.stringify(data));
+        
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error al enviar sugerencia');
+    }
+});
+
+--------------------------------------------------------------------------------------
+
+
+
+Generar una clase ValidadorPerro =============================================================================================================
+
+   PROMPT --------------------
+
+    Genera una clase ValidadorPerro que contiene los datos del perro en formato String y un objeto Perro.
+    Debe permitir: 
+        1. recibir los campos en formato String (datos que provienen de parámetros recibidos desde un objeto HttpServletRequest)
+        2. convertir los campos al formato requerido por el campo receptor en la clase Perro (binding) y si la conversión no tiene errores
+           debe guardar los valores en el objeto perro de la clase.
+        3. validar los campos de la clase Perro con los criterios siguientes:
+                   El nombre no puede ser nulo, ni puede estar formado solo por blancos
+                   El nombre debe estar formado por al menos 3 caracteres alfabéticos válidos en el idioma español
+
+		   La raza no puede ser nula, ni puede estar formado solo por blancos
+                   La raza debe estar formado por al menos 3 caracteres alfabéticos válidos en el idioma español
+
+                   La edad debe ser positiva y menor que 20
+
+                   El color no puede ser nulo, ni puede estar formado solo por blancos
+                   El color debe estar formado por al menos 4 caracteres alfabéticos válidos en el idioma español y puede incluir espacios
+
+		   El peso debe ser positivo mayor a 0.1
+
+                   Los campos vacunado y esterilizado no pueden ser nulos y deben tener valores booleanos válidos
+
+          el método de validación debe devolver un mapa de errores de tipo Map<String,List<String>> cuya llave es el nombre de cada campo
+          y cuyo valor es una lista de errores de validación encontrados en ese campo. Si el campo no tuvo errores no debe aparecer en el 
+          mapa.
+        4.La clase debe tener un método que una vez que se validen los datos, guarde la cantidad de errores encontrados, de modo que sea posible
+          con un getter saber si el objeto perro es correcto o no
+
+      CODIGO GENERADO: ---------------------------------------------------------------
+
+import java.util.*;
+import javax.servlet.http.HttpServletRequest;
+
+public class ValidadorPerro {
+    private final Map<String, String> datosBrutos;
+    private final Perro perro;
+    private final Map<String, List<String>> errores = new HashMap<>();
+    private final int contadorErrores;
+
+    public ValidadorPerro(HttpServletRequest request) {
+        this.datosBrutos = extraerParametros(request);
+        this.perro = new Perro("", "", 0, "", 0.0, false, false);
+        realizarBinding();
+        validarPerro();
+        this.contadorErrores = calcularTotalErrores();
+    }
+
+    private Map<String, String> extraerParametros(HttpServletRequest request) {
+        Map<String, String> params = new HashMap<>();
+        request.getParameterMap().forEach((key, valores) -> {
+            if (valores != null && valores.length > 0) {
+                params.put(key, valores[0]);
+            }
+        });
+        return params;
+    }
+
+    private void realizarBinding() {
+        procesarCampo("nombre", this::procesarNombre);
+        procesarCampo("raza", this::procesarRaza);
+        procesarCampo("edad", this::procesarEdad);
+        procesarCampo("color", this::procesarColor);
+        procesarCampo("peso", this::procesarPeso);
+        procesarCampo("vacunado", this::procesarVacunado);
+        procesarCampo("esterilizado", this::procesarEsterilizado);
+    }
+
+    private void procesarCampo(String campo, Runnable procesador) {
+        try {
+            procesador.run();
+        } catch (Exception e) {
+            agregarError(campo, "Error en formato: " + e.getMessage());
+        }
+    }
+
+    private void procesarNombre() {
+        String valor = datosBrutos.getOrDefault("nombre", "").trim();
+        if (valor.isEmpty()) throw new IllegalArgumentException("Campo requerido");
+        perro.setNombre(valor);
+    }
+
+    private void procesarRaza() {
+        String valor = datosBrutos.getOrDefault("raza", "").trim();
+        if (valor.isEmpty()) throw new IllegalArgumentException("Campo requerido");
+        perro.setRaza(valor);
+    }
+
+    private void procesarEdad() {
+        String valor = datosBrutos.getOrDefault("edad", "").trim();
+        if (valor.isEmpty()) throw new IllegalArgumentException("Campo requerido");
+        perro.setEdad(Integer.parseInt(valor));
+    }
+
+    private void procesarColor() {
+        String valor = datosBrutos.getOrDefault("color", "").trim();
+        if (valor.isEmpty()) throw new IllegalArgumentException("Campo requerido");
+        perro.setColor(valor);
+    }
+
+    private void procesarPeso() {
+        String valor = datosBrutos.getOrDefault("peso", "").trim();
+        if (valor.isEmpty()) throw new IllegalArgumentException("Campo requerido");
+        perro.setPeso(Double.parseDouble(valor));
+    }
+
+    private void procesarVacunado() {
+        String valor = datosBrutos.getOrDefault("vacunado", "").trim().toLowerCase();
+        if (valor.equals("si")) perro.setVacunado(true);
+        else if (valor.equals("no")) perro.setVacunado(false);
+        else throw new IllegalArgumentException("Valor inválido (solo 'si'/'no')");
+    }
+
+    private void procesarEsterilizado() {
+        String valor = datosBrutos.getOrDefault("esterilizado", "").trim().toLowerCase();
+        if (valor.equals("si")) perro.setEsterilizado(true);
+        else if (valor.equals("no")) perro.setEsterilizado(false);
+        else throw new IllegalArgumentException("Valor inválido (solo 'si'/'no')");
+    }
+
+    private void validarPerro() {
+        validarNombre();
+        validarRaza();
+        validarEdad();
+        validarColor();
+        validarPeso();
+        validarBoolean("vacunado", perro.isVacunado());
+        validarBoolean("esterilizado", perro.isEsterilizado());
+    }
+
+    private void validarNombre() {
+        String valor = perro.getNombre();
+        if (valor.length() < 3) agregarError("nombre", "Mínimo 3 caracteres");
+        if (!valor.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]{3,}$")) {
+            agregarError("nombre", "Solo caracteres alfabéticos válidos");
+        }
+    }
+
+    private void validarRaza() {
+        String valor = perro.getRaza();
+        if (valor.length() < 3) agregarError("raza", "Mínimo 3 caracteres");
+        if (!valor.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]{3,}$")) {
+            agregarError("raza", "Solo caracteres alfabéticos válidos");
+        }
+    }
+
+    private void validarEdad() {
+        int valor = perro.getEdad();
+        if (valor <= 0) agregarError("edad", "Debe ser positivo");
+        if (valor >= 20) agregarError("edad", "Máximo 19 años");
+    }
+
+    private void validarColor() {
+        String valor = perro.getColor();
+        if (valor.length() < 4) agregarError("color", "Mínimo 4 caracteres");
+        if (!valor.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]{4,}$")) {
+            agregarError("color", "Solo caracteres alfabéticos válidos");
+        }
+    }
+
+    private void validarPeso() {
+        double valor = perro.getPeso();
+        if (valor <= 0.1) agregarError("peso", "Mínimo 0.1 kg");
+    }
+
+    private void validarBoolean(String campo, boolean valor) {
+        try {
+            if (!datosBrutos.containsKey(campo)) {
+                agregarError(campo, "Campo requerido");
+            }
+        } catch (Exception e) {
+            agregarError(campo, "Valor booleano inválido");
+        }
+    }
+
+    private void agregarError(String campo, String mensaje) {
+        errores.computeIfAbsent(campo, k -> new ArrayList<>()).add(mensaje);
+    }
+
+    private int calcularTotalErrores() {
+        return errores.values().stream().mapToInt(List::size).sum();
+    }
+
+    // Métodos públicos
+    public Map<String, List<String>> getErrores() {
+        return new HashMap<>(errores);
+    }
+
+    public boolean esValido() {
+        return contadorErrores == 0;
+    }
+
+    public Perro getPerroValidado() {
+        return esValido() ? perro : null;
+    }
+}
+
+----------------------------------------------------------------------------

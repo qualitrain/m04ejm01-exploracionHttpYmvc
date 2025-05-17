@@ -19,4 +19,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ProcesaPerroServlet</display-name>
+    <servlet-name>ProcesaPerroServlet</servlet-name>
+    <servlet-class>mx.com.qtx.analizapet.ProcesaPerroServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProcesaPerroServlet</servlet-name>
+    <url-pattern>/Perros</url-pattern>
+  </servlet-mapping>
 </web-app>

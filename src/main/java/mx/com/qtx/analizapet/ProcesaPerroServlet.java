@@ -1,57 +1,55 @@
 package mx.com.qtx.analizapet;
 
+import java.io.IOException;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Enumeration;
 
 /**
- * Servlet implementation class AnalizaPetServlet
+ * Servlet implementation class ProcesaPerroServlet
  */
-public class AnalizaPetServlet extends HttpServlet {
+public class ProcesaPerroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public AnalizaPetServlet() {
-        super();
+    public ProcesaPerroServlet() {
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		UtilWeb.analizarContenidoHTTPpeticion(request);
-		
-		response.getWriter()
-		        .append("Analizando petición... ");
-		response.addCookie(new Cookie("curso", "Arquitectura-Web"));
-		response.setContentType("text/plain;UTF-8");
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		response.getWriter().append("Procesando formulario de perros...");
+		
+		UtilWeb.analizarContenidoHTTPpeticion(request);
+
 	}
 
 	/**
 	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 	}
 
 }

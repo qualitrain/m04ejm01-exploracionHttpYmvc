@@ -32,6 +32,7 @@ public class AnalizaPetServlet extends HttpServlet {
 		        .append("Analizando petición... ");
 		response.addCookie(new Cookie("curso", "Arquitectura-Web"));
 		response.setContentType("text/plain;UTF-8");
+		response.sendRedirect("Perros");
 	}
 
 

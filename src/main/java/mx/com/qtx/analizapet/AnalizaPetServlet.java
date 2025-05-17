@@ -1,5 +1,6 @@
 package mx.com.qtx.analizapet;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
@@ -32,7 +33,10 @@ public class AnalizaPetServlet extends HttpServlet {
 		        .append("Analizando petición... ");
 		response.addCookie(new Cookie("curso", "Arquitectura-Web"));
 		response.setContentType("text/plain;UTF-8");
-		response.sendRedirect("Perros");
+		
+		 RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/Perros");
+		 rd.forward(request, response);
+//		response.sendRedirect("Perros");
 	}
 
 

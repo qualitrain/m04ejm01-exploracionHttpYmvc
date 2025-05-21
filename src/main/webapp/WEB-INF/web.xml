@@ -21,12 +21,12 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>ProcesaPerroServlet</display-name>
-    <servlet-name>ProcesaPerroServlet</servlet-name>
-    <servlet-class>mx.com.qtx.analizapet.ProcesaPerroServlet</servlet-class>
+    <display-name>ControladorServlet</display-name>
+    <servlet-name>ControladorServlet</servlet-name>
+    <servlet-class>mx.com.qtx.analizapet.web.ControladorServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ProcesaPerroServlet</servlet-name>
-    <url-pattern>/Perros</url-pattern>
+    <servlet-name>ControladorServlet</servlet-name>
+    <url-pattern>/ctrl</url-pattern>
   </servlet-mapping>
 </web-app>

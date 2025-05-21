@@ -1,4 +1,4 @@
-package mx.com.qtx.analizapet;
+package mx.com.qtx.analizapet.web;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

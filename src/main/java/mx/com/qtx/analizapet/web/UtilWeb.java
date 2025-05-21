@@ -1,4 +1,4 @@
-package mx.com.qtx.analizapet;
+package mx.com.qtx.analizapet.web;
 
 import java.util.Enumeration;
 

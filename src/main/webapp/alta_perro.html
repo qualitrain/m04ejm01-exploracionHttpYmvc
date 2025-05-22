@@ -8,7 +8,7 @@
 <body>
     <div class="form-container">
         <h2>Registro de Perro</h2>
-        <form action="Analizar" method="post">
+        <form action="ctrl" method="post">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -57,7 +57,7 @@
                     </label>
                 </div>
             </div>
-
+			<input type="hidden" value="alta_perro" name="vista">
             <button type="submit">Registrar Perro</button>
             <button type="button" id="sugerenciasBtn">Sugerencias</button>
         </form>

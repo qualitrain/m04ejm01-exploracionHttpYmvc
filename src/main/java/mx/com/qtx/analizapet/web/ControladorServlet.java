@@ -42,7 +42,9 @@ public class ControladorServlet extends HttpServlet {
 				if(validadorPerro.esValido()) {
 					Perro perro =validadorPerro.getPerroValidado();
 					this.gestorPerros.insertarPerro(perro);
-					
+					List<Perro> perros = this.gestorPerros.obtenerPerrosTodos();
+					request.setAttribute("perros", perros);
+					navegarA(request, response, "/lista_perros.jsp");
 					// Navegar a vista de exito
 				}
 				else {
@@ -50,6 +52,9 @@ public class ControladorServlet extends HttpServlet {
 					colocarErroresFormularioEnPeticion(request, validadorPerro);
 					navegarA(request,response,"/alta_perro.jsp");
 				}
+			}
+			case "listaPerros" ->{
+				navegarA(request,response,"/alta_perro.html");
 			}
 		}
 	}

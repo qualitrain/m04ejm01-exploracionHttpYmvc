@@ -4,7 +4,7 @@
     <description></description>
     <display-name>AnalizaPetServlet</display-name>
     <servlet-name>AnalizaPetServlet</servlet-name>
-    <servlet-class>mx.com.qtx.analizapet.AnalizaPetServlet</servlet-class>
+    <servlet-class>mx.com.qtx.analizapet.web.AnalizaPetServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AnalizaPetServlet</servlet-name>

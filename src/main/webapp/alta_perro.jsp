@@ -21,24 +21,28 @@
                 <label for="raza">Raza:</label>
                 <input type="text" id="raza" name="raza" 
                        value="${not empty param.raza ? param.raza : ''}" required>
+                 <span class="error">${errorRaza}</span> 
             </div>
 
             <div class="form-group">
                 <label for="edad">Edad (años):</label>
                 <input type="number" id="edad" name="edad" min="0" max="30" 
                        value="${not empty param.edad ? param.edad : 0}" required>
+                 <span class="error">${errorEdad}</span> 
             </div>
 
             <div class="form-group">
                 <label for="color">Color:</label>
                 <input type="text" id="color" name="color" 
                        value="${not empty param.color ? param.color : ''}" required>
+                  <span class="error">${errorColor}</span> 
             </div>
 
             <div class="form-group">
                 <label for="peso">Peso (kg):</label>
                 <input type="number" id="peso" name="peso" step="0.1" min="0" max="100" 
                        value="${not empty param.peso ? param.peso : 0.0}" required>
+                  <span class="error">${errorPeso}</span> 
             </div>
 
             <div class="form-group">
@@ -53,6 +57,7 @@
                                ${param.vacunado eq 'no' ? 'checked' : ''}> No
                     </label>
                 </div>
+            <span class="error">${errorVacunado}</span> 
             </div>
 
             <div class="form-group">
@@ -67,8 +72,9 @@
                                ${param.esterilizado eq 'no' ? 'checked' : ''}> No
                     </label>
                 </div>
+             <span class="error">${errorEsterilizado}</span> 
             </div>
-			<input type="hidden" value="alta_perro_jsp" name="vista">
+			<input type="hidden" value="alta_perro" name="vista">
 
             <button type="submit">Registrar Perro</button>
             <button type="button" id="sugerenciasBtn">Sugerencias</button>

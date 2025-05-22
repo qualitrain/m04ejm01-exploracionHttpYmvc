@@ -43,12 +43,28 @@ public class ControladorServlet extends HttpServlet {
 				}
 				else {
 					mostrarErroresValidacion(validadorPerro);
-					String errorNombre = obtenerError(validadorPerro,"nombre");
-					request.setAttribute("errorNombre", errorNombre);
+					colocarErroresFormularioEnPeticion(request, validadorPerro);
 					navegarA(request,response,"/alta_perro.jsp");
 				}
 			}
 		}
+	}
+
+	private void colocarErroresFormularioEnPeticion(HttpServletRequest request, ValidadorPerro validadorPerro) {
+		String errorNombre = obtenerError(validadorPerro,"nombre");
+		request.setAttribute("errorNombre", errorNombre);
+		String errorRaza = obtenerError(validadorPerro,"raza");
+		request.setAttribute("errorRaza", errorRaza);
+		String errorEdad = obtenerError(validadorPerro,"edad");
+		request.setAttribute("errorEdad", errorEdad);
+		String errorColor = obtenerError(validadorPerro,"color");
+		request.setAttribute("errorColor", errorColor);
+		String errorPeso = obtenerError(validadorPerro,"peso");
+		request.setAttribute("errorPeso", errorPeso);
+		String errorVacunado = obtenerError(validadorPerro,"vacunado");
+		request.setAttribute("errorVacunado", errorVacunado);
+		String errorEsterilizado = obtenerError(validadorPerro,"esterilizado");
+		request.setAttribute("errorEsterilizado", errorEsterilizado);
 	}
 
 	private String obtenerError(ValidadorPerro validadorPerro, String campo) {

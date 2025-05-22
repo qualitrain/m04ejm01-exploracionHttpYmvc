@@ -1,4 +1,9 @@
 @charset "UTF-8";
+        .error{
+        	font-weight: bold;
+        	color: red;
+        	font-size: .8rem;
+        }
         .form-container {
             max-width: 600px;
             margin: 20px auto;

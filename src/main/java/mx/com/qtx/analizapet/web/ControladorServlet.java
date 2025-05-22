@@ -3,6 +3,7 @@ package mx.com.qtx.analizapet.web;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -41,16 +42,33 @@ public class ControladorServlet extends HttpServlet {
 					// Navegar a vista de exito
 				}
 				else {
-					Map<String, List<String>> errores = validadorPerro.getErrores();
-					Map<String, String> valsCapturados = validadorPerro.getDatosBrutos();
-					for(String campoI : errores.keySet()) {
-						System.out.println(campoI + "[" + valsCapturados.get(campoI) + "]"
-								+ " tiene los errores siguientes:");
-						for(String errorK:errores.get(campoI)) {
-							System.out.println("\t" + errorK);
-						}
-					}
+					mostrarErroresValidacion(validadorPerro);
+					String errorNombre = obtenerError(validadorPerro,"nombre");
+					request.setAttribute("errorNombre", errorNombre);
+					navegarA(request,response,"/alta_perro.jsp");
 				}
+			}
+		}
+	}
+
+	private String obtenerError(ValidadorPerro validadorPerro, String campo) {
+		List<String> lstErrores = validadorPerro.getErrores().get(campo);
+		if(lstErrores == null)
+			return "";
+		if(lstErrores.size() == 0)
+			return "";
+		String cadErrores = lstErrores.stream().collect(Collectors.joining(", "));
+		return cadErrores;
+	}
+
+	private void mostrarErroresValidacion(ValidadorPerro validadorPerro) {
+		Map<String, List<String>> errores = validadorPerro.getErrores();
+		Map<String, String> valsCapturados = validadorPerro.getDatosBrutos();
+		for(String campoI : errores.keySet()) {
+			System.out.println(campoI + "[" + valsCapturados.get(campoI) + "]"
+					+ " tiene los errores siguientes:");
+			for(String errorK:errores.get(campoI)) {
+				System.out.println("\t" + errorK);
 			}
 		}
 	}

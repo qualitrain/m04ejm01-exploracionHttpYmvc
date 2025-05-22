@@ -9,6 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import mx.com.qtx.analizapet.entidades.Perro;
 import mx.com.qtx.analizapet.servicios.GestorPerros;
 import mx.com.qtx.analizapet.servicios.ValidadorPerro;
 
@@ -39,6 +40,9 @@ public class ControladorServlet extends HttpServlet {
 				UtilWeb.analizarContenidoHTTPpeticion(request);
 				ValidadorPerro validadorPerro = this.gestorPerros.validarPerro(request);
 				if(validadorPerro.esValido()) {
+					Perro perro =validadorPerro.getPerroValidado();
+					this.gestorPerros.insertarPerro(perro);
+					
 					// Navegar a vista de exito
 				}
 				else {
